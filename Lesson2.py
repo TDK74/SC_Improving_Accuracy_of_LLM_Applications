@@ -25,16 +25,12 @@ def make_llama_3_prompt(user, system = ""):
     system_prompt = ""
 
     if system != "":
-        system_prompt = (
-                        f"<|start_header_id|>system<|end_header_id|>\n\n{system}<|eot_id|>"
-                        )
+        system_prompt = (f"<|start_header_id|>system<|end_header_id|>\n\n{system}<|eot_id|>")
 
-    return (
-            f"<|begin_of_text|>{system_prompt}"
+    return (f"<|begin_of_text|>{system_prompt}"
             f"<|start_header_id|>user<|end_header_id|>\n\n{user}"
             f"<|eot_id|>"
-            f"<|start_header_id|>assistant<|end_header_id|>\n\n"
-            )
+            f"<|start_header_id|>assistant<|end_header_id|>\n\n")
 
 ################
 # Or - version 1
@@ -42,22 +38,15 @@ def make_llama_3_prompt(user, system = ""):
 #     system_prompt = ""
 
 #     if system != "":
-#         system_prompt = (
-#                         f"<|start_header_id|>system<|end_header_id|>\n\n{system}"
-#                         f"<|eot_id|>"
-#                         )
+#         system_prompt = (f"<|start_header_id|>system<|end_header_id|>\n\n{system}"
+#                         f"<|eot_id|>")
 
-#     return (
-#             f"<|begin_of_text|{system_prompt}<|start_header_id|>user<|end_header_id|>\n\n{user}"
-#             f"<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n"
-#            )
+#     return (f"<|begin_of_text|{system_prompt}<|start_header_id|>user<|end_header_id|>\n\n{user}"
+#             f"<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n")
 ################
 # Or - version 2
 # def make_llama_3_prompt(user, system = ""):
-#     parts = {
-#             'system' : system if system else "",
-#             'user' : user,
-#             }
+#     parts = {'system' : system if system else "", 'user' : user, }
 
 #     template = """
 #                 <|begin_of_text|>
