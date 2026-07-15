@@ -22,6 +22,7 @@ from util.setup_logging import setup_logging
 
 _ = load_dotenv()
 
+## ------------------------------------------------------ ##
 logger = logging.getLogger(__name__)
 engine = sqlite3.connect("./nba_roster.db")
 setup_logging()
